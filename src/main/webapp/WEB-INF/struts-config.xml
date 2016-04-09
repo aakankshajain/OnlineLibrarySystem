@@ -11,29 +11,28 @@
 	<form-beans>
 		<!-- mapping of all bean files to action files. -->
 
-		<form-bean name="UserRegistrationForm" type="online.library.system.bean.UserRegisterationBean">
+		<form-bean name="UserRegistrationBean" type="online.library.system.bean.UserRegisterationBean">
 		</form-bean>
 		
-				
+		<form-bean name="LoginBean" type="online.library.system.bean.LoginBean">
+		</form-bean>		
 		
 	</form-beans>
-
-	<!-- ========== Global Exception Definitions ============================== -->
-	
-	<!-- ========== Global Forward Definitions ============================== -->
-	<global-forwards>
-
-		<!-- Note: Using Tiles Definitions for some mappings -->
-		<forward name="welcome" path="/welcome.do" />
-		<forward name="success" path="/welcome.do" />
-		<forward name="logoff" path="/logoff.do" />
-		<forward name="redirect" path="/redirect.do" />
-		<forward name="wniwelcome" path="/wniwelcome.do" />
 
 	
 	<!-- ========== Action Mapping Definitions ============================== -->
 	<action-mappings>
 	<!-- mapping of action files bean files and jsp files.. -->
+	
+	<action path="register" name="UserRegisterationBean" type="online.library.system.UserRegisteratonAction">
+	<forward name="success" path="//name of jsp file where want to redirect"/>
+	<forward name="executionFailure" path="//error page name of jsp file"/>
+	</action>
+	
+	<action path="login" name="LoginBean" type="online.library.system.LoginAction">
+	<forward name="success" path="//name of jsp file where want to redirect"/>
+	<forward name="executionFailure" path="//error page name of jsp file"/>
+	</action>
 		
 	</action-mappings>
 

@@ -21,7 +21,7 @@ public class UserRegisterationAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, ServletRequest request, ServletResponse response)
 			throws Exception {
 		// TODO Auto-generated method stub
-		String key="success";
+		String key=null;
 		Configuration cfg=new Configuration();
 		cfg.configure("/resources/hibernate.cfg.xml");
 		SessionFactory sf=cfg.buildSessionFactory();
@@ -45,9 +45,19 @@ public class UserRegisterationAction extends Action {
 		student.setPassword(password);
 		student.setPhoneNumber(phoneNumber);
 		student.setStudentId(studentID);
+		try{
+			session.save(student);
+			session.beginTransaction().commit();
+			key="success";
+		}catch(Exception e){
+			key="executionFailure";
+		}
 		
-		session.save(student);
-		session.beginTransaction().commit();
+		/*
+		 * After execution page will be redirected to new JSP page according to result.
+		 * In case any exception occured page will be redirected to error page.
+		 * This mapping will be present in struts.config file. 
+		 */
 		return mapping.findForward(key);
 	}
 	
