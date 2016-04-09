@@ -14,6 +14,10 @@
 		<form-bean name="UserRegistrationBean" type="online.library.system.bean.UserRegisterationBean">
 		</form-bean>
 		
+		<form-bean name="BookRegistrationBean" type="online.library.system.bean.BookRegistrationBean">
+		</form-bean>
+		
+		
 		<form-bean name="LoginBean" type="online.library.system.bean.LoginBean">
 		</form-bean>		
 		
@@ -29,9 +33,15 @@
 	<forward name="executionFailure" path="//error page name of jsp file"/>
 	</action>
 	
-	<action path="login" name="LoginBean" type="online.library.system.LoginAction">
+	<action path="registerBook" name="BookRegistrationBean" type="online.library.system.BookRegistratonAction">
 	<forward name="success" path="//name of jsp file where want to redirect"/>
 	<forward name="executionFailure" path="//error page name of jsp file"/>
+	</action>
+	
+	<action path="login" name="LoginBean" type="online.library.system.LoginAction">
+	<forward name="libLogin" path="//name of jsp file where want to redirect after librarian login"/>
+	<forward name="userLogin" path="//name of jsp file where want to redirect after user login"/>
+	<forward name="loginFailed" path="//will remain on same jsp file and will be having an error message."/>
 	</action>
 		
 	</action-mappings>

@@ -22,37 +22,48 @@ public class UserRegisterationAction extends Action {
 			throws Exception {
 		// TODO Auto-generated method stub
 		String key=null;
-		Configuration cfg=new Configuration();
-		cfg.configure("/resources/hibernate.cfg.xml");
-		SessionFactory sf=cfg.buildSessionFactory();
-		Session session=sf.openSession();
-		UserRegisterationBean bean=(UserRegisterationBean) form;
+		String buttonValue=null;
 		/*
-		 * Assuming that input for registration will come from GUI through bean class.
-		 * bean class will contain all getters and setters method.
-		 * so for single student taking it hard coded.
-		 * This method will be called when user will click on submit button on registeration page.
+		 * buttonValue will set from jsp page.Initially it will be null.
+		 * On clicking submit button it will be "submit".
 		 */
-		String studentID="BTBTC10089";
-		String name="aakanksha";
-		String password="aakanksha@5";
-		String emailId="aakanksha.bwr@gmail.com";
-		String phoneNumber="1234567890";
-		
-		UserRegisteration student=new UserRegisteration();
-		student.setName(name);
-		student.setEmailId(emailId);
-		student.setPassword(password);
-		student.setPhoneNumber(phoneNumber);
-		student.setStudentId(studentID);
-		try{
-			session.save(student);
-			session.beginTransaction().commit();
+		if(buttonValue.equals("submit")){
+			Configuration cfg=new Configuration();
+			cfg.configure("/resources/hibernate.cfg.xml");
+			SessionFactory sf=cfg.buildSessionFactory();
+			Session session=sf.openSession();
+			UserRegisterationBean bean=(UserRegisterationBean) form;
+			/*
+			 * Assuming that input for registration will come from GUI through bean class.
+			 * bean class will contain all getters and setters method.
+			 * so for single student taking it hard coded.
+			 * This method will be called when user will click on submit button on registeration page.
+			 */
+			String studentID="BTBTC10089";
+			String name="aakanksha";
+			String password="aakanksha@5";
+			String emailId="aakanksha.bwr@gmail.com";
+			String phoneNumber="1234567890";
+			
+			UserRegisteration student=new UserRegisteration();
+			student.setName(name);
+			student.setEmailId(emailId);
+			student.setPassword(password);
+			student.setPhoneNumber(phoneNumber);
+			student.setStudentId(studentID);
+			try{
+				session.save(student);
+				session.beginTransaction().commit();
+				key="success";
+			}catch(Exception e){
+				//again set buttonValue =null
+				key="executionFailure";
+			}
+			//again set buttonValue =null
+		}else{
 			key="success";
-		}catch(Exception e){
-			key="executionFailure";
 		}
-		
+				
 		/*
 		 * After execution page will be redirected to new JSP page according to result.
 		 * In case any exception occured page will be redirected to error page.
