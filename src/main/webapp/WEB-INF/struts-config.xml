@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ============= Dyna Action Form Bean Definitions ================================ -->
+	<!-- use org.apache.struts.action.DynaActionForm if not implementing Validator 
+		engine -->
+	<form-beans>
+		<!-- mapping of all bean files to action files. -->
+
+		<form-bean name="UserRegistrationForm" type="online.library.system.bean.UserRegisterationBean">
+		</form-bean>
+		
+				
+		
+	</form-beans>
+
+	<!-- ========== Global Exception Definitions ============================== -->
+	
+	<!-- ========== Global Forward Definitions ============================== -->
+	<global-forwards>
+
+		<!-- Note: Using Tiles Definitions for some mappings -->
+		<forward name="welcome" path="/welcome.do" />
+		<forward name="success" path="/welcome.do" />
+		<forward name="logoff" path="/logoff.do" />
+		<forward name="redirect" path="/redirect.do" />
+		<forward name="wniwelcome" path="/wniwelcome.do" />
+
+	
+	<!-- ========== Action Mapping Definitions ============================== -->
+	<action-mappings>
+	<!-- mapping of action files bean files and jsp files.. -->
+		
+	</action-mappings>
+
+
+	<!-- Implementing Applicaiton level Resource Bundles -->
+	<message-resources null="false"
+		parameter="MessageResources" />
+
+
+	
+</struts-config>

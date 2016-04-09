@@ -12,7 +12,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import online.library.system.POJOClasses.UserRegisteration;
-
+import online.library.system.bean.UserRegisterationBean;
 import online.library.system.POJOClasses.UserRegisteration;
 
 public class UserRegisterationAction extends Action {
@@ -26,8 +26,10 @@ public class UserRegisterationAction extends Action {
 		cfg.configure("/resources/hibernate.cfg.xml");
 		SessionFactory sf=cfg.buildSessionFactory();
 		Session session=sf.openSession();
+		UserRegisterationBean bean=(UserRegisterationBean) form;
 		/*
-		 * Assuming that input for registration will come from GUI.
+		 * Assuming that input for registration will come from GUI through bean class.
+		 * bean class will contain all getters and setters method.
 		 * so for single student taking it hard coded.
 		 * This method will be called when user will click on submit button on registeration page.
 		 */

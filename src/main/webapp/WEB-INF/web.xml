@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<!-- General description of the web application -->
+	<display-name>OLS_Web</display-name>
+	<description>
+        This is the 1.0 version of the Web-OPI Toolkit Blank.
+    </description>
+
+	<!-- Define OPI Portal Authentication URL for this servlet context -->
+	
+	<!-- Struts Action Servlet Configuration -->
+	<servlet>
+		<servlet-name>OLS</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>validate</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+
+	<!-- Struts Action Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>OLS</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- HttpSession timeout in Minutes -->
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
+
+	<!-- The Welcome File List -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!--  Application Listener -->
+	
+	</web-app>
