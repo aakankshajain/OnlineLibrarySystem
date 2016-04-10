@@ -23,7 +23,8 @@ create table bookIssue{
 	studentId varchar2(20),
 	issueDate DATE,
 	dueDate DATE,
-	avalability char(1);
+	submitDate DATE,
+	avalability char(1),
 	FOREIGN KEY(bookNumber) REFERENCES bookRegistration(bookNumber),
 	FOREIGN KEY(studentId) REFERENCES userRegistration(studentId),
 	

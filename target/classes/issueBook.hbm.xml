@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+	<class name="online.library.system.POJOClasses.IssueBook" table="issueBook">
+		<id name="sNo"></id>
+		<property name="bookNumber"></property>
+		<property name="studentId"></property>
+		<property name="issueDate"></property>
+		<property name="dueDate"></property>
+		<property name="submitDate"></property>
+		<property name="availability"></property>
+		
+		<many-to-one name="bookRegistration" class="online.library.system.POJOClasses.bookRegistration"
+            column="bookNumber" unique="true" not-null="true"
+            cascade="all" />
+            
+       	<many-to-one name="userRegistration" class="online.library.system.POJOClasses.userRegistration"
+            column="studentId" unique="true" not-null="true"
+            cascade="all" />
+		
+	</class>
+</hibernate-mapping>
