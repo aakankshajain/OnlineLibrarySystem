@@ -84,7 +84,14 @@ public class SearchForUser extends Action{
 				searchRecord.add(srchUser);
 			}
 			
-			
+			key="success";
+			/*
+			 * All the records according to search done by user will be stored in the list.
+			 * this will be set in list in bean form from where it will be accessible on GUI.
+			 * on GUI if (bookType='P' && availability='y')Book button will be shown.
+			 * if( (bookType='P' && availability='N'))Disabled book button will be shown.
+			 * if(bookType='E') a download link will appear corresponding to record.
+			 */
 		}else{
 			key="executionFailure";
 		}
