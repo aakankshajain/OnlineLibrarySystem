@@ -19,7 +19,10 @@
 		
 		
 		<form-bean name="LoginBean" type="online.library.system.bean.LoginBean">
-		</form-bean>		
+		</form-bean>
+		
+		<form-bean name="SearchForuserBean" type="online.library.system.bean.SearchForUserBean">
+		</form-bean>			
 		
 	</form-beans>
 
@@ -34,6 +37,16 @@
 	</action>
 	
 	<action path="registerBook" name="BookRegistrationBean" type="online.library.system.BookRegistratonAction">
+	<forward name="success" path="//name of jsp file where want to redirect"/>
+	<forward name="executionFailure" path="//error page name of jsp file"/>
+	</action>
+	
+	<action path="search" name="SearchForUserBean" type="online.library.system.SearchForUserAction">
+	<forward name="success" path="// will remain on same jsp file"/>
+	<forward name="executionFailure" path="//error page name of jsp file"/>
+	</action>
+	
+	<action path="bookingRequest" name="bookingRequestBean" type="online.library.system.BookingRequestAction">
 	<forward name="success" path="//name of jsp file where want to redirect"/>
 	<forward name="executionFailure" path="//error page name of jsp file"/>
 	</action>

@@ -5,13 +5,14 @@
 
 <hibernate-mapping>
 	<class name="online.library.system.POJOClasses.IssueBook" table="issueBook">
-		<id name="sNo"></id>
-		<property name="bookNumber"></property>
+		<id name="bookNumber"></id>
 		<property name="studentId"></property>
 		<property name="issueDate"></property>
 		<property name="dueDate"></property>
 		<property name="submitDate"></property>
 		<property name="availability"></property>
+		<property name="status"></property>
+		<property name="requestedUser"></property>
 		
 		<many-to-one name="bookRegistration" class="online.library.system.POJOClasses.bookRegistration"
             column="bookNumber" unique="true" not-null="true"

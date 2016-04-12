@@ -84,6 +84,7 @@ public class BookRegistrationAction extends Action {
 		 * In case any exception occured page will be redirected to error page.
 		 * This mapping will be present in struts.config file. 
 		 */
+		
 		return mapping.findForward(key);
 	}
 	

@@ -2,6 +2,9 @@ package online.library.system.actionClasses;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -20,7 +23,7 @@ import online.library.system.utility.CommonConstants;
 public class Login extends Action {
 	
 	@Override
-	public ActionForward execute(ActionMapping mapping, ActionForm form, ServletRequest request, ServletResponse response)
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		
 		/*
@@ -31,7 +34,7 @@ public class Login extends Action {
 		 * For users username = ID
 		 * and password= set at registration time
 		 */
-		
+		HttpSession ssn=request.getSession(true);
 		String uname="username";
 		String password="password";
 		LoginBean bean=(LoginBean) form;
@@ -62,6 +65,7 @@ public class Login extends Action {
 				 */
 				key="loginFailed";
 			}else{
+				ssn.setAttribute("userName", uname);
 				key="userLogin";
 			}
 		}

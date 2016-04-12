@@ -25,6 +25,8 @@ create table bookIssue{
 	dueDate DATE,
 	submitDate DATE,
 	avalability char(1),
+	status varchar(10),
+	requestedUser varchar(20),
 	FOREIGN KEY(bookNumber) REFERENCES bookRegistration(bookNumber),
 	FOREIGN KEY(studentId) REFERENCES userRegistration(studentId),
 	
