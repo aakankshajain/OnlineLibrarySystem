@@ -30,6 +30,7 @@ To use spring framework we need to give entry of dispatcher servlet in web.xml f
     <load-on-startup>1</load-on-startup>
   </servlet>
 
+  
   <servlet-mapping>
     <servlet-name>springapp</servlet-name>
     <url-pattern>*.htm</url-pattern>
