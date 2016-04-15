@@ -17,5 +17,49 @@ The main functionality of spring is depency injection.What it means is if a appl
 ##New features :
 In higher version of spring for injecting depency in a class we dont need to write xml file..Annotations like @Resources and @component can do this.
 
-##Features which can be used in Student library managment system development :
-To be added..
+##How to develop a project using apring framework :
+First of all it iis required to create a maven project.All the directories will be created according to maven folder structure.<br>
+create a index.jsp file which will be tthe initial (welcome file) for the project to start with.<br>
+Make entry of index.jsp file in web.xml file.web.xml file present in WEB-INF folder.<br>
+To use spring framework we need to give entry of dispatcher servlet in web.xml file.This servlet id front controller and handle all http requests.Which again forward the request to respective controller.<br>
+
+
+	<servlet>
+    <servlet-name>springapp</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>springapp</servlet-name>
+    <url-pattern>*.htm</url-pattern>
+  </servlet-mapping>
+  
+  Above entry of servlet and servlet mapping should be made in web.xml file. any url pattern with .htm will be routed to dispatcherServlet.<br>
+  
+  create one more file spring-servlet.xml in WEB-INF.This file will contain mapping of bean files to controllers. Like:
+  
+  <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+  <bean name="/<url_for_class>.htm" class="<package_name.class_name"/>
+
+</beans>
+  
+  When in view file a url will be called corresponding class name will be invoked.
+  Mapping for all files to url will be present here.
+  
+  
+  Now create A class(controller class) in src folder which will implement controller interface.This class will give definition to "handleRequest" method of controller interface.
+This method will return ModelAndView Object having view file name in its argument.
+Internally view resolver resolve all these url mappings.
+
+Create view file to which we are redirecting from controller class.
+
+execute mavan command(clean and install) and build a package.
+and run it on server.
+
+These are the basic steps for spring application.  
