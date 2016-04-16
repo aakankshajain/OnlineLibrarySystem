@@ -64,4 +64,3 @@ and run it on server.
 These are the basic steps for spring application.  
 
 
-#JAX-RS
