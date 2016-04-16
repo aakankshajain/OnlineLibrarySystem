@@ -32,13 +32,13 @@ We can use Jersey framework to develop RESTful webservices.Jersey framework uses
 3.create a rest service(.java file) in /src folder.
 4.make entry com.sun.jersey.spi.container.servlet.ServletContainer in web.xml. Also make entry of rest service in web.xml.
 
-<servlet>
+	<servlet>
 		<servlet-name>jersey-serlvet</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 	
 		<init-param>
 		     <param-name>com.sun.jersey.config.property.packages</param-name>
-		     <param-value>src.main.java.online.library.managment.action</param-value>
+		     <param-value>src.main.java.online.library.system.actionClasses</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -49,3 +49,4 @@ We can use Jersey framework to develop RESTful webservices.Jersey framework uses
 	</servlet-mapping>
 
 
+	
