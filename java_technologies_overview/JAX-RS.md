@@ -12,3 +12,40 @@ For eg : There are is website in ehich we have a functionality user regitration,
 So what we will do is, we will use web services of those who provides databases to store data.We will send data in xml format (request) to server through web service and that will be store in database and database will again send the response if need accoordingly.
 
 Those webservices which uses REST architecture are known as RESTful web services.These webservices make use of HTTP methods like GET,POST,PUT .DELETE.OPTIONS.
+
+###How to develop RESTful webservice:
+We can use Jersey framework to develop RESTful webservices.Jersey framework uses JAX-RS APIs for developing the same, which makes the development easier.
+
+1. Create a maven project.(Online library management system)
+2. Make following entry in pom.xml for downloading required libraries for Jersey framework.
+
+<dependencies>
+	
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.8</version>
+		</dependency>
+
+	</dependencies>
+	
+3.create a rest service(.java file) in /src folder.
+4.make entry com.sun.jersey.spi.container.servlet.ServletContainer in web.xml. Also make entry of rest service in web.xml.
+
+<servlet>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	
+		<init-param>
+		     <param-name>com.sun.jersey.config.property.packages</param-name>
+		     <param-value>src.main.java.online.library.managment.action</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+
