@@ -123,8 +123,10 @@ To test services after deploying the war file on server.We need to hit the url :
 http://localhost:8080/olms/SearchBookLib/getBookList/java+herbert
 
 We will get the response in xml format.
+<p>
 <Book>
 	<name>...</name>
 	<author>...</author>
 	<subject>...</subject>
 </Book>
+</p>
