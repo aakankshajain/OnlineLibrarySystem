@@ -4,6 +4,6 @@ AngularJS is a framework which can be used to extend the features of HTML. It is
 
 AngularJS can be added in an HTML file using "<script>" tag.
 ```html
-  <script>
+<script>
   src="//angular js source"
-  </script>
+</script>
