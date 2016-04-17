@@ -58,12 +58,12 @@ We can use Jersey framework to develop RESTful webservices.Jersey framework uses
 	Class SearchBookRestService{
 		
 		@Get
-		@Path(name="getBookList")
+		@Path(name="booklist/{searchvalue}")
 		@Response(application_xml)
-		public List<BookList> getBookList(@PathParam("getBookList")String serchValue){
+		public List<BookList> getBookList(@PathParam("searchvalue")String serchVal){
 		
 			SearchBookDao sbdao=new SearchBookDao();
-			retrun searchBook(searchValue);
+			retrun searchBook(searchVal);
 		}
 	
 	}
@@ -91,6 +91,11 @@ We can use Jersey framework to develop RESTful webservices.Jersey framework uses
 		private String author;
 		private String subject;
 		
+		public BookList(String name,String author,String subject){
+			this.name=name;
+			this.author=author;
+			this.subject=subject;
+		}
 		public getName(){
 			return this.name;
 		}
