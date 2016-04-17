@@ -59,7 +59,7 @@ We can use Jersey framework to develop RESTful webservices.Jersey framework uses
 		
 		@Get
 		@Path(name="booklist/{searchvalue}")
-		@Response(application_xml)
+		@Produces(MediaType.APPLICATION_XML)
 		public List<BookList> getBookList(@PathParam("searchvalue")String serchVal){
 		
 			SearchBookDao sbdao=new SearchBookDao();
@@ -148,7 +148,7 @@ SearchBookRestService.java
 		
 		@Get
 		@Path(name="booklist")
-		@Response(application_xml)
+		@Produces(MediaType.APPLICATION_XML)
 		public List<BookList> getBookList(){
 		
 			SearchBookDao sbdao=new SearchBookDao();
@@ -158,3 +158,35 @@ SearchBookRestService.java
 	}
 	
 Like this we can perform search operation without any serch value.All list of books will be in xml format in output.
+
+
+For performing insert operation we will add one more method in SearchBookRestService.java class..
+
+SearchBookRestService.java
+
+	@Path(name="SearchBookLib")
+	Class SearchBookRestService{
+		String 	success="<Result>succes</Result>";
+		String failure="<Result>fail</Result>";
+		@Get
+		@Path(name="/registerbook")
+		@Produces(MediaType.APPLICATION_XML)
+		@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+		public List<BookList> registerBook(@FormParam("booknumber") String bookNumber,@FormParam("bookname")String 							bookName,@FormParam("author") String author,@FormParam("subject") String 					subject){
+		
+			int result=//methos in Dao class will inset a book with values coming from argument in database.
+			/*
+			*Result will be 1 if insert is successful.
+			*/
+			if(result==1)
+				retrun success;
+			else
+				return failure;
+		}
+	
+	}
+	
+	This is how to perform register book functionality.
+	In same way we can perform user registeration functionality.
+	
+	
