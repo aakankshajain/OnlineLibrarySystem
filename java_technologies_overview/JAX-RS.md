@@ -127,7 +127,10 @@ We can use Jersey framework to develop RESTful webservices.Jersey framework uses
 To test services after deploying the war file on server.We need to hit the url : http://localhost:8080/<project_name>/rest/<classPath>/<functionPath>/<path_params>
 http://localhost:8080/olms/rest/SearchBookLib/getBookList/java+herbert
 
-We will get the response in xml format.
+We will get the response in xml format
+
+output.xml
+
 <font>
 <Book>
 	<name>...</name>
