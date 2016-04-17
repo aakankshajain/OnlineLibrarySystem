@@ -3,7 +3,7 @@
 JAX-RS is a java based API which makes easier to develop rest web servies by using a lot of annotations.
 ### What REST  is :
 
-REST is an architecture where some resources(methods) are present at server side.And client has access to use those resources and perform some operations.
+REST is an architecture where resources which are present at server side can be accessible by client.Resources are like object of OOP.
 Some HTTP methods are used for this purpose. Like GET(provides a read only access to resources),POST(To update existing resources),PUT(To create new resources),DELETE(To delete resources),OPTIONS
 
 ###RESTful webservices :
@@ -124,14 +124,34 @@ We can use Jersey framework to develop RESTful webservices.Jersey framework uses
 		}
 	}
 
-To test services after deploying the war file on server.We need to hit the url : http://localhost:8080/<project_name>/<classPath>/<functionPath>/<path_params>
-http://localhost:8080/olms/SearchBookLib/getBookList/java+herbert
+To test services after deploying the war file on server.We need to hit the url : http://localhost:8080/<project_name>/rest/<classPath>/<functionPath>/<path_params>
+http://localhost:8080/olms/rest/SearchBookLib/getBookList/java+herbert
 
 We will get the response in xml format.
-<p>
+<font>
 <Book>
 	<name>...</name>
 	<author>...</author>
 	<subject>...</subject>
 </Book>
-</p>
+</font>
+
+In this way we can perform search operation.In case we dont want to provide search value,we can write same method in which no argument will be passed.Eg : 
+
+SearchBookRestService.java
+	
+	@Path(name="SearchBookLib")
+	Class SearchBookRestService{
+		
+		@Get
+		@Path(name="booklist")
+		@Response(application_xml)
+		public List<BookList> getBookList(){
+		
+			SearchBookDao sbdao=new SearchBookDao();
+			retrun searchBook();
+		}
+	
+	}
+	
+Like this we can perform search operation without any serch value.All list of books will be in xml format in output.
