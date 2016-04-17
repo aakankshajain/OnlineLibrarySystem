@@ -17,7 +17,7 @@ The main functionality of spring is depency injection.What it means is if a appl
 ##New features :
 In higher version of spring for injecting depency in a class we dont need to write xml file..Annotations like @Resources and @component can do this.
 
-##How to develop a project using apring framework :
+##How to develop a project using spring framework :
 First of all it iis required to create a maven project.All the directories will be created according to maven folder structure.<br>
 create a index.jsp file which will be tthe initial (welcome file) for the project to start with.<br>
 Make entry of index.jsp file in web.xml file.web.xml file present in WEB-INF folder.<br>
