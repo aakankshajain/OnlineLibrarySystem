@@ -15,8 +15,11 @@ ng-model : binds the value of html element to application variable.<br>
 ng-bind : binds value of application variable to html element.<br>
 ng-init :  declare and initialize angularJS application variable.<br>
 
+AngularJS expression is written in double braces.({{}})<br>
 
-AngularJS modules defined the application.Eg : ng-app
-AngularJS controllers control the application.Eg : ng-control
+  input type="text" ng-model="angJS" /input
+  p **{{angJS}}** /p
+AngularJS modules defined the application.Eg : ng-app<br>
+AngularJS controllers control the application.Eg : ng-controller
 
 
