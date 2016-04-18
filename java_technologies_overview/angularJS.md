@@ -37,7 +37,16 @@ and JS exp can contain loops and conditional operator but not AJS.
 
 ###AngularJS module
 
-AngularJS modules defined the application.Eg : ng-app<br>
+AngularJS modules defined the application.It is a container for the application.<br>
+We can create a angularJS module by using method : angular.module("<Module_name>",[])
+after creating module we can controller, filters to it.
+For eg:
+
+script <br>
+var app =angular.module("myapp",[]);
+app.controller("myctr",function($scope){
+.....
+});
 
 
 
