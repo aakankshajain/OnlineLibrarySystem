@@ -17,8 +17,9 @@ ng-init :  declare and initialize angularJS application variable.<br>
 
 AngularJS expression is written in double braces.({{}})<br>
 
-  input type="text" ng-model="angJS" /input
+  input type="text" ng-model="angJS" /input <br>
   p **{{angJS}}** /p
+  
 AngularJS modules defined the application.Eg : ng-app<br>
 AngularJS controllers control the application.Eg : ng-controller
 
