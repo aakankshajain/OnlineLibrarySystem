@@ -16,6 +16,7 @@ ng-bind : binds value of application variable to html element.<br>
 ng-init :  declare and initialize angularJS application variable.<br>
 
 
-
+AngularJS modules defined the application.Eg : ng-app
+AngularJS controllers control the application.Eg : ng-control
 
 
