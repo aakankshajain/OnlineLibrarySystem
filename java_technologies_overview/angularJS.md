@@ -20,23 +20,25 @@ AngularJS expression is written in double braces.({{}}).It can contain variables
   input type="text" ng-model="angJS" /input <br>
   p **{{angJS}}** /p
   <br>
-  AngularJS object cab be defined like
+  AngularJS object cab be defined like<br>
   
-  div ng-app="" ng-init="person={a='a1',b='b1'}"
-  {{person.a}}
-  {{person.b}}
+  div ng-app="" ng-init="person={a='a1',b='b1'}"<br>
+  {{person.a}}<br>
+  {{person.b}}<br>
 
-AngularJS array can be defined as
+AngularJS array can be defined as<br>
 
-div ng-app="" ng-init="person=[1,2,3,4,5]"
-{{person[1]}}
-{{person[2]}}
+div ng-app="" ng-init="person=[1,2,3,4,5]"<br>
+{{person[1]}}<br>
+{{person[2]}}<br>
 
 AngularJS expression are like java script expresion only the difference is : AJS exp can be written inside HTML nut not JS exp.
 and JS exp can contain loops and conditional operator but not AJS.
 
+###AngularJS module
 
 AngularJS modules defined the application.Eg : ng-app<br>
-AngularJS controllers control the application.Eg : ng-controller
+
+
 
 
