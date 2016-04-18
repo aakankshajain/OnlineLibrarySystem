@@ -43,10 +43,11 @@ after creating module we can controller, filters to it.
 For eg:
 
 script <br>
-var app =angular.module("myapp",[]);
-app.controller("myctr",function($scope){
-.....
-});
+var app =angular.module("myapp",[]);<br>
+app.controller("myctr",function($scope){<br>
+.....<br>
+});<br>
+/script<br>
 
 
 
