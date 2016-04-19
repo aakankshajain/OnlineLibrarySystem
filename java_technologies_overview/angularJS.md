@@ -46,6 +46,76 @@ script <br>
 var app =angular.module("myapp",[]);<br>
 app.controller("myctr",function($scope){<br>
 .....<br>
+
+[] indicate that we are creating new module.<br>
+If we do not use this it mean we are using existing module.<br>
+
+YTo use this function angu;ar.module(...) we need to first add angularJS library.So it is always preferable to add it in head part or befor boby part in html file.<br>
+
+### AngularJS directives:
+
+These are used to add some more attributes to HTML. all predefined directives have "ng" prefix.<br>
+Eg : ng-app : initialize angularJS application.<br>
+	ng-init : initialize application variable(generally not used instead controller are used.)<br>
+	ng-repeat : can be used where loops are required. eg : in printing array values.<br>
+	ng-model : used to bind html values to application data.<br>
+				It also provides the facility to check type validation,adds CSS files and bind bind HTML data to HTML forms.<br>
+				
+
+We can also define custome directives by using directive method.It can be called like<br>
+
+script<br>
+
+	var app=angular.module("myModule",[]);<br>
+	app.directive(myCustomDirective,function(){<br>
+	});<br>
+/script<br>
+
+Note: Name of the directive should be in camel case when defining it.But when using it it is used with "-" between each word.like : <br>
+myCustomeDirective : when created<br>
+
+my-custom-directive : when used in html<br>
+
+these directives can be used as :  HTML element(A), HTML attribute (E), class(C),  comments(M)<br>
+We can restrict its use also,By default its scope is EA (mean it can be used with element and attribute)<br>
+
+to restrict its use we use "restrict" keyword when defining the directive.<br>
+
+script<br>
+	var app=angular.module("myModule",[])<br>
+	app.directive(myCustomDirective,function(){<br>
+		return{<br>
+			restrict : "A",<br>
+			template : "Custome directive"<br>
+		};<br>
+		
+	});<br>
+
+	
+### Angular model
+
+Angular model binds html input field data to angularJS variable.This is in bi-direction.If we change value of input field variable's values will also change and vice versa.<br>
+It is also used in validations.<br>
+Eg :<br>
+ span ng-show="formName.fieldName.$error.email"<br>
+	write message here<br>
+	/span<br>
+	
+	if formName.fieldName.$error.email will return true message will be shown otherwise not.<br>
+	
+	we can also check the status.<br>
+	
+	formName.fieldName.$valid<br>
+	formName.fieldName.$touched<br>
+	formName.fieldName.$status<br>
+	
+	There are some css classes which will be added depending on the status.<br>
+	
+###AngularJS Controller
+
+AngularJS controllers control the application. "ng-controller" directive is used to define controllers.
+	
+
 });<br>
 /script<br>
 
