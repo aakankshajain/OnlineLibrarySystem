@@ -43,9 +43,9 @@ after creating module we can controller, filters to it.
 For eg:
 
 script <br>
-var app =angular.module("myapp",[]);<br>
-app.controller("myctr",function($scope){<br>
-.....<br>
+var app =angular.module("myapp",[]);
+app.controller("myctr",function($scope){
+.....
 
 [] indicate that we are creating new module.<br>
 If we do not use this it mean we are using existing module.<br>
@@ -66,9 +66,9 @@ We can also define custome directives by using directive method.It can be called
 
 script<br>
 
-	var app=angular.module("myModule",[]);<br>
-	app.directive(myCustomDirective,function(){<br>
-	});<br>
+	var app=angular.module("myModule",[]);
+	app.directive(myCustomDirective,function(){
+	});
 /script<br>
 
 Note: Name of the directive should be in camel case when defining it.But when using it it is used with "-" between each word.like : <br>
