@@ -87,9 +87,9 @@ script<br>
 		return{<br>
 			restrict : "A",<br>
 			template : "Custome directive"<br>
-		};<br>
+		};
 		
-	});<br>
+	});
 
 	
 ### Angular model
