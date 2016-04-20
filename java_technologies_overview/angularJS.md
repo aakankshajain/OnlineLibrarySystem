@@ -119,6 +119,38 @@ AngularJS controllers control the application. "ng-controller" directive is used
 });<br>
 /script<br>
 
+### AngularJS scope
+scope is binding between view and controller.
+scope is an object which is owner of all the application variable and methods present in angularJS application.
 
+An object $rootScope is also available which is availble for whole application.
+
+###AngularJS filters
+Filters are used to format data. To use filter in expression add pipe '|' after expression then add filter.
+For eg : 
+{{name|lowercase}}
+
+AngularJS provides following filters :
+currency ,Date ,lowercase, uppercase, orderBy, number, limitTo, json, filter
+
+Facility to develop custome filters is also provided. for this filter function is available in module.
+For eg : 
+ angular.module("myModule",[]).filter("myFilter",function(){
+ 
+ .....
+ return ...
+ })
+ 
+ 
+ ### AngularJS Service
+ Services are object or functions present in angularJS application.
+ For eg : $location, $timeout, $http, $interval
+ 
+ using $location service we can find out the current url of web page.
+ $http can make request to server and get response.
+ 
+ For creating custom services  service method is given in module.
+ 
+ 
 
 
