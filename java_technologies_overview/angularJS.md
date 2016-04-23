@@ -147,7 +147,9 @@ For eg : <br>
  For eg : $location, $timeout, $http, $interval<br>
  
  using $location service we can find out the current url of web page.<br>
- $http can make request to server and get response.<br>
+ $http can make request to server and get response. It has methods like .get, .post, .put, .delete etc.<br>
+It returns response which contains properties like .config, .data, .status, .statusText, .headers. Data received from response is JSON object.<br>
+ 
  
  For creating custom services  service method is given in module.<br>
  
