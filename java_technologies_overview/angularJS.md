@@ -120,36 +120,36 @@ AngularJS controllers control the application. "ng-controller" directive is used
 /script<br>
 
 ### AngularJS scope
-scope is binding between view and controller.
-scope is an object which is owner of all the application variable and methods present in angularJS application.
+scope is binding between view and controller.<br>
+scope is an object which is owner of all the application variable and methods present in angularJS application.<br>
 
-An object $rootScope is also available which is availble for whole application.
+An object $rootScope is also available which is availble for whole application.<br>
 
 ###AngularJS filters
-Filters are used to format data. To use filter in expression add pipe '|' after expression then add filter.
-For eg : 
-{{name|lowercase}}
+Filters are used to format data. To use filter in expression add pipe '|' after expression then add filter.<br>
+For eg : <br>
+{{name|lowercase}}<br>
 
-AngularJS provides following filters :
-currency ,Date ,lowercase, uppercase, orderBy, number, limitTo, json, filter
+AngularJS provides following filters :<br>
+currency ,Date ,lowercase, uppercase, orderBy, number, limitTo, json, filter<br>
 
-Facility to develop custome filters is also provided. for this filter function is available in module.
-For eg : 
- angular.module("myModule",[]).filter("myFilter",function(){
+Facility to develop custome filters is also provided. for this filter function is available in module.<br>
+For eg : <br>
+ angular.module("myModule",[]).filter("myFilter",function(){<br>
  
  .....
- return ...
- })
+ return ...<br>
+ })<br>
  
  
  ### AngularJS Service
- Services are object or functions present in angularJS application.
- For eg : $location, $timeout, $http, $interval
+ Services are object or functions present in angularJS application.<br>
+ For eg : $location, $timeout, $http, $interval<br>
  
- using $location service we can find out the current url of web page.
- $http can make request to server and get response.
+ using $location service we can find out the current url of web page.<br>
+ $http can make request to server and get response.<br>
  
- For creating custom services  service method is given in module.
+ For creating custom services  service method is given in module.<br>
  
  
 
