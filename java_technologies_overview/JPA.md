@@ -91,3 +91,43 @@ In xml file : <br>
 4. id : for defining primary key<br>
 5. generated-value : for specifying hoe primary key would be generated.<br>
 6. basic : for mapping rest variables of class with column of tables.<br>
+
+
+Here we need to explicitly maintain a mapping file in which we always need to check variables name column names of table for mapping.
+To overcome this issue we can use annotations.
+
+###Annotation
+
+Using annotations we provide the mapping from to database table from class itself.
+annotaions always starts with "@".Annotations are used for class,variables and methodS And used above declaration.
+These annotation are defined in javax.persistance package.
+
+@Entity : To declare the class as a table
+@Table : to define name of the table on which class is pointing.
+@Column : To specify to which column class's variable is pointing.
+@Id : To define a class's variable as primary key of corresponding table.
+@Basic : For those class's variables having no constraint in table.
+
+
+#### How to insert a record in database using JPA:
+As we have created a POJO class Employee.java
+
+For inserting one record in database one class need to be written :
+
+InsertData.java
+
+	EntityManagerFactory emf=Persistance.createEntityManagerFactory("Eclipselink_JPA");
+	EntityManager em=emf.creteEntityManager();
+	em.getTransection().begin();
+	Employee e =new Employee();
+	e.setId("1");
+	e.setName("abc");
+	em.persist(e);
+	em.getTransection().commit();
+	em.close();
+	emf.close();
+
+This block of code need to be written for inserting a record.
+
+Like this we can also update data.
+
